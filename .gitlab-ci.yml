@@ -1,0 +1,31 @@
+image: node:10.15.3-alpine
+
+cache: &cache
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+    - jest-cache/
+
+stages:
+  - test
+  - build
+
+test:unit:
+  stage: test
+  script:
+    - npm install
+    - npm run test
+
+build:
+  stage: build
+  cache:
+    <<: *cache
+    policy: pull
+  script:
+    - npm run build
+  artifacts:
+    name: '$CI_PROJECT_NAME-$CI_COMMIT_REF_NAME'
+    paths:
+      - dist/
+  only:
+    - master

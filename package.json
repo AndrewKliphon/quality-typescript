@@ -1,0 +1,44 @@
+{
+  "name": "quality-typescript",
+  "version": "1.0.0",
+  "description": "Seed project with tools to assist in code quality.",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run clean && tsc --rootDir ./",
+    "clean": "rimraf dist",
+    "lint": "tslint -p tsconfig.json",
+    "start": "nodemon -e ts -x ts-node src/index.ts",
+    "test": "jest -c jest.config.js --coverage",
+    "test:watch": "jest -c jest.config.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndrewKliphon/quality-typescript.git"
+  },
+  "keywords": [
+    "quality",
+    "typescript"
+  ],
+  "author": "Andrew Kliphon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AndrewKliphon/quality-typescript/issues"
+  },
+  "homepage": "https://github.com/AndrewKliphon/quality-typescript#readme",
+  "devDependencies": {
+    "@types/jest": "^24.0.11",
+    "@types/node": "^11.11.0",
+    "husky": "^1.3.1",
+    "jest": "^24.3.1",
+    "nodemon": "^1.18.10",
+    "prettier": "^1.16.4",
+    "pretty-quick": "^1.10.0",
+    "rimraf": "^2.6.3",
+    "ts-jest": "^24.0.0",
+    "ts-node": "^8.0.3",
+    "tslint": "^5.13.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-sonarts": "^1.9.0",
+    "typescript": "^3.3.3333"
+  }
+}
